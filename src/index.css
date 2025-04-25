@@ -1,0 +1,5 @@
+.mantine-InputWrapper-root[data-error="true"]{
+    .mantine-InputWrapper-label{  
+        color: var(--mantine-color-error)  
+        }
+  }

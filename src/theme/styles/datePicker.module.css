@@ -1,0 +1,15 @@
+.root{
+
+    /* background: var(--mantine-color-text); */
+    /* border-radius: 100%; */
+    
+}
+
+.root[data-first-in-range=true]{
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;}
+
+.root[data-last-in-range=true]{
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+}

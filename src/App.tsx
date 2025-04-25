@@ -1,131 +1,128 @@
-import { Box, Button, ButtonGroup, Divider, Grid, ThemeProvider, Typography } from '@mui/material'
 import Layout from './components/Layout'
-import { XTextField } from './components/Textfield'
-import { lightTheme } from './theme'
-import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import dayjs from 'dayjs';
-import { PickersActionBar } from '@mui/x-date-pickers';
-import { XDatePicker } from './components/XDatePicker';
-
+import { mantineTheme } from './theme'
+import { Box, Divider, Grid, MantineProvider, Text, TextInput } from '@mantine/core';
+import { useState } from 'react';
+import { DatePicker } from '@mantine/dates';
 
 function App() {
 
+  const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
 
   return (
-
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <ThemeProvider theme={lightTheme}>
-
-        <Layout>
+    <MantineProvider theme={mantineTheme}>
+      <Layout>
 
 
 
-
-          <Box sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'start',
-
-          }}>
-
-            <XDatePicker />
+        <Box sx={{ display: 'flex', columnGap: 4, mt: 4 }}>
 
 
-          </Box>
+          <TextInput
+            error="blyat"
+            label="Custom layout"
+            placeholder="Custom layout"
+
+          />
+
+          <TextInput
+            description="hi ol"
+            label="Custom yout"
+            placeholder="Custom "
+
+
+          />
+
+
+          <TextInput
+            label="Custom yout"
+            placeholder="Custom "
+          />
 
 
 
-          <Divider />
-
-          <Box sx={{ display: 'flex', columnGap: 4, mt: 4 }}>
-
-            <XTextField
-              onChange={(e) => console.log(e.target.value)}
-              label="Error man"
-              error
-              helperText="this filed is something"
-            />
-            <XTextField
-              onChange={(e) => console.log(e.target.value)}
-              label="Name"
-              helperText="Please enter Name"
-            />
-
-            <XTextField
-              onChange={(e) => console.log(e.target.value)}
-              label="Haa"
-
-            />
-          </Box>
-
-          <Divider />
-
-          <Grid container spacing={2} rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
-
-            <Grid size={3}  ><Typography variant="display2Xl" fontWeight={"semibold"}>Display 2Xl</Typography> </Grid>
-            <Grid size={3}><Typography variant="display2Xl" fontWeight={t => t.typography.fontWeightRegular}>Display 2Xl</Typography> </Grid>
-            <Grid size={3}><Typography variant="display2Xl" fontWeight={t => t.typography.fontWeightSemibold}>Display 2Xl</Typography> </Grid>
-            <Grid size={3}><Typography variant="display2Xl" fontWeight={t => t.typography.fontWeightBold}>Display 2Xl</Typography> </Grid>
-
-            <Grid size={3}><Typography variant="displayXl" fontWeight={t => t.typography.fontWeightRegular}>Display Xl</Typography> </Grid>
-            <Grid size={3}><Typography variant="displayXl" fontWeight={t => t.typography.fontWeightMedium}>Display Xl</Typography> </Grid>
-            <Grid size={3}><Typography variant="displayXl" fontWeight={t => t.typography.fontWeightSemibold}>Display Xl</Typography> </Grid>
-            <Grid size={3}><Typography variant="displayXl" fontWeight={t => t.typography.fontWeightBold}>Display Xl</Typography> </Grid>
-
-            <Grid size={3}><Typography variant="displayLg" fontWeight={t => t.typography.fontWeightRegular}>Display Lg</Typography> </Grid>
-            <Grid size={3}><Typography variant="displayLg" fontWeight={t => t.typography.fontWeightMedium}>Display Lg</Typography> </Grid>
-            <Grid size={3}><Typography variant="displayLg" fontWeight={t => t.typography.fontWeightSemibold}>Display Lg</Typography> </Grid>
-            <Grid size={3}><Typography variant="displayLg" fontWeight={t => t.typography.fontWeightBold}>Display Lg</Typography> </Grid>
-
-            <Grid size={3}><Typography variant="displayMd" fontWeight={t => t.typography.fontWeightRegular}>Display Md</Typography> </Grid>
-            <Grid size={3}><Typography variant="displayMd" fontWeight={t => t.typography.fontWeightMedium}>Display Md</Typography> </Grid>
-            <Grid size={3}><Typography variant="displayMd" fontWeight={t => t.typography.fontWeightSemibold}>Display Md</Typography> </Grid>
-            <Grid size={3}><Typography variant="displayMd" fontWeight={t => t.typography.fontWeightBold}>Display Md</Typography> </Grid>
-
-            <Grid size={3}><Typography variant="displaySm" fontWeight={t => t.typography.fontWeightRegular}>Display Sm</Typography> </Grid>
-            <Grid size={3}><Typography variant="displaySm" fontWeight={t => t.typography.fontWeightMedium}>Display Sm</Typography> </Grid>
-            <Grid size={3}><Typography variant="displaySm" fontWeight={t => t.typography.fontWeightSemibold}>Display Sm</Typography> </Grid>
-            <Grid size={3}><Typography variant="displaySm" fontWeight={t => t.typography.fontWeightBold}>Display Sm</Typography> </Grid>
-
-            <Grid size={3}><Typography variant="displayXs" fontWeight={t => t.typography.fontWeightRegular}>Display Xs</Typography> </Grid>
-            <Grid size={3}><Typography variant="displayXs" fontWeight={t => t.typography.fontWeightMedium}>Display Xs</Typography> </Grid>
-            <Grid size={3}><Typography variant="displayXs" fontWeight={t => t.typography.fontWeightSemibold}>Display Xs</Typography> </Grid>
-            <Grid size={3}><Typography variant="displayXs" fontWeight={t => t.typography.fontWeightBold}>Display Xs</Typography> </Grid>
 
 
-            <Grid size={3}><Typography variant="textXl" fontWeight={t => t.typography.fontWeightRegular}>Text Xl</Typography> </Grid>
-            <Grid size={3}><Typography variant="textXl" fontWeight={t => t.typography.fontWeightMedium}>Text Xl</Typography> </Grid>
-            <Grid size={3}><Typography variant="textXl" fontWeight={t => t.typography.fontWeightSemibold}>Text Xl</Typography> </Grid>
-            <Grid size={3}><Typography variant="textXl" fontWeight={t => t.typography.fontWeightBold}>Text Xl</Typography> </Grid>
 
-            <Grid size={3}><Typography variant="textLg" fontWeight={t => t.typography.fontWeightRegular}>Text Lg</Typography> </Grid>
-            <Grid size={3}><Typography variant="textLg" fontWeight={t => t.typography.fontWeightMedium}>Text Lg</Typography> </Grid>
-            <Grid size={3}><Typography variant="textLg" fontWeight={t => t.typography.fontWeightSemibold}>Text Lg</Typography> </Grid>
-            <Grid size={3}><Typography variant="textLg" fontWeight={t => t.typography.fontWeightBold}>Text Lg</Typography> </Grid>
+        </Box>
 
-            <Grid size={3}><Typography variant="textMd" fontWeight={t => t.typography.fontWeightRegular}>Text Md</Typography> </Grid>
-            <Grid size={3}><Typography variant="textMd" fontWeight={t => t.typography.fontWeightMedium}>Text Md</Typography> </Grid>
-            <Grid size={3}><Typography variant="textMd" fontWeight={t => t.typography.fontWeightSemibold}>Text Md</Typography> </Grid>
-            <Grid size={3}><Typography variant="textMd" fontWeight={t => t.typography.fontWeightBold}>Text Md</Typography> </Grid>
+        <Divider />
 
-            <Grid size={3}><Typography variant="textSm" fontWeight={t => t.typography.fontWeightRegular}>Text Sm</Typography> </Grid>
-            <Grid size={3}><Typography variant="textSm" fontWeight={t => t.typography.fontWeightMedium}>Text Sm</Typography> </Grid>
-            <Grid size={3}><Typography variant="textSm" fontWeight={t => t.typography.fontWeightSemibold}>Text Sm</Typography> </Grid>
-            <Grid size={3}><Typography variant="textSm" fontWeight={t => t.typography.fontWeightBold}>Text Sm</Typography> </Grid>
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'start',
 
-            <Grid size={3}><Typography variant="textXs" fontWeight={t => t.typography.fontWeightRegular}>Text Xs</Typography> </Grid>
-            <Grid size={3}><Typography variant="textXs" fontWeight={t => t.typography.fontWeightMedium}>Text Xs</Typography> </Grid>
-            <Grid size={3}><Typography variant="textXs" fontWeight={t => t.typography.fontWeightSemibold}>Text Xs</Typography> </Grid>
-            <Grid size={3}><Typography variant="textXs" fontWeight={t => t.typography.fontWeightBold}>Text Xs</Typography> </Grid>
+        }}>
 
-          </Grid>
+          <DatePicker type="range" allowSingleDateInRange value={value} onChange={setValue} />
+
+        </Box>
+        <Divider />
 
 
-        </Layout>
-      </ThemeProvider>
-    </LocalizationProvider>
+        <Grid
+          container spacing={2} rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
+
+          <Grid size={3}  ><Text variant="display2Xl" >Display 2Xl</Text> </Grid>
+          <Grid size={3}><Text variant="display2Xl"              >Display 2Xl</Text> </Grid>
+          <Grid size={3}><Text variant="display2Xl"               >Display 2Xl</Text> </Grid>
+          <Grid size={3}><Text variant="display2Xl"               >Display 2Xl</Text> </Grid>
+
+          <Grid size={3}><Text variant="displayXl"               >Display Xl</Text> </Grid>
+          <Grid size={3}><Text variant="displayXl"               >Display Xl</Text> </Grid>
+          <Grid size={3}><Text variant="displayXl"               >Display Xl</Text> </Grid>
+          <Grid size={3}><Text variant="displayXl"               >Display Xl</Text> </Grid>
+
+          <Grid size={3}><Text variant="displayLg"               >Display Lg</Text> </Grid>
+          <Grid size={3}><Text variant="displayLg"               >Display Lg</Text> </Grid>
+          <Grid size={3}><Text variant="displayLg"               >Display Lg</Text> </Grid>
+          <Grid size={3}><Text variant="displayLg"               >Display Lg</Text> </Grid>
+
+          <Grid size={3}><Text variant="displayMd"               >Display Md</Text> </Grid>
+          <Grid size={3}><Text variant="displayMd"               >Display Md</Text> </Grid>
+          <Grid size={3}><Text variant="displayMd"               >Display Md</Text> </Grid>
+          <Grid size={3}><Text variant="displayMd"               >Display Md</Text> </Grid>
+
+          <Grid size={3}><Text variant="displaySm"               >Display Sm</Text> </Grid>
+          <Grid size={3}><Text variant="displaySm"               >Display Sm</Text> </Grid>
+          <Grid size={3}><Text variant="displaySm"               >Display Sm</Text> </Grid>
+          <Grid size={3}><Text variant="displaySm"               >Display Sm</Text> </Grid>
+
+          <Grid size={3}><Text variant="displayXs"               >Display Xs</Text> </Grid>
+          <Grid size={3}><Text variant="displayXs"               >Display Xs</Text> </Grid>
+          <Grid size={3}><Text variant="displayXs"               >Display Xs</Text> </Grid>
+          <Grid size={3}><Text variant="displayXs"               >Display Xs</Text> </Grid>
+
+
+          <Grid size={3}><Text variant="textXl"               >Text Xl</Text> </Grid>
+          <Grid size={3}><Text variant="textXl"               >Text Xl</Text> </Grid>
+          <Grid size={3}><Text variant="textXl"               >Text Xl</Text> </Grid>
+          <Grid size={3}><Text variant="textXl"               >Text Xl</Text> </Grid>
+
+          <Grid size={3}><Text variant="textLg"               >Text Lg</Text> </Grid>
+          <Grid size={3}><Text variant="textLg"               >Text Lg</Text> </Grid>
+          <Grid size={3}><Text variant="textLg"               >Text Lg</Text> </Grid>
+          <Grid size={3}><Text variant="textLg"               >Text Lg</Text> </Grid>
+
+          <Grid size={3}><Text variant="textMd"               >Text Md</Text> </Grid>
+          <Grid size={3}><Text variant="textMd"               >Text Md</Text> </Grid>
+          <Grid size={3}><Text variant="textMd"               >Text Md</Text> </Grid>
+          <Grid size={3}><Text variant="textMd"               >Text Md</Text> </Grid>
+
+          <Grid size={3}><Text variant="textSm"               >Text Sm</Text> </Grid>
+          <Grid size={3}><Text variant="textSm"               >Text Sm</Text> </Grid>
+          <Grid size={3}><Text variant="textSm"               >Text Sm</Text> </Grid>
+          <Grid size={3}><Text variant="textSm"               >Text Sm</Text> </Grid>
+
+          <Grid size={3}><Text variant="textXs"               >Text Xs</Text> </Grid>
+          <Grid size={3}><Text variant="textXs"               >Text Xs</Text> </Grid>
+          <Grid size={3}><Text variant="textXs"               >Text Xs</Text> </Grid>
+          <Grid size={3}><Text variant="textXs"               >Text Xs</Text> </Grid>
+
+        </Grid>
+
+      </Layout>
+    </MantineProvider>
   )
 }
 

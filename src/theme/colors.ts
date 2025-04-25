@@ -1,4 +1,4 @@
-export const primaryColors = {
+export const customColors = {
   brand: {
     "25": "#E7FDF3",
     "50": "#CCF7E0",
@@ -97,4 +97,4 @@ export const primaryColors = {
     "900": "#194185",
     "950": "#102A56",
   },
-};
+} as const;
