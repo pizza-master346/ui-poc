@@ -82,7 +82,7 @@ export const mantineTheme = createMantineTheme({
     }),
     DatePicker: DatePicker.extend({
       classNames: {
-        day: datePickerClasses.root,
+        day: datePickerClasses.day,
       },
     }),
   },

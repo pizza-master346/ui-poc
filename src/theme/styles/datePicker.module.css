@@ -1,15 +1,21 @@
-.root{
+.day{
 
     /* background: var(--mantine-color-text); */
     /* border-radius: 100%; */
     
 }
 
-.root[data-first-in-range=true]{
+.day[data-first-in-range=true]{
     border-top-left-radius: 100%;
     border-bottom-left-radius: 100%;}
 
-.root[data-last-in-range=true]{
+.day[data-last-in-range=true]{
     border-top-right-radius: 100%;
     border-bottom-right-radius: 100%;
+}
+.day[data-selected=true]:not([data-last-in-range=true]):not([data-first-in-range=true]){
+    /* border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%; */
+
+    border-radius: 100%;
 }
