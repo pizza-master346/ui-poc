@@ -1,0 +1,3 @@
+.root[data-error="true"] label{
+color: var(--mantine-color-error);
+  }

@@ -8,6 +8,7 @@ import {
 import { DefaultMantineColor, MantineColorsTuple } from "@mantine/core";
 import datePickerClasses from "./styles/datePicker.module.css";
 import textClasses from "./styles/text.module.css";
+import textInputClasses from "./styles/textInput.module.css";
 import { DatePicker } from "@mantine/dates";
 
 type ExtendedCustomColors = "primary" | DefaultMantineColor;
@@ -42,6 +43,7 @@ declare module "@mantine/core" {
 }
 
 export const mantineTheme = createMantineTheme({
+  fontFamily: "Manrope, sans-serif",
   colors: {
     primary: [
       customColors.brand["25"],
@@ -68,6 +70,9 @@ export const mantineTheme = createMantineTheme({
         input: {
           borderRadius: 8,
         },
+      },
+      classNames: {
+        root: textInputClasses.root,
       },
     }),
     Text: Text.extend({

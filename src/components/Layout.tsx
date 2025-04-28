@@ -1,21 +1,36 @@
-import * as React from 'react';
+import { AppShell, Burger } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { Outlet } from 'react-router';
 
 
+export default function Layout() {
+  const [opened, { toggle }] = useDisclosure();
 
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * Remove this when copying and pasting into your project.
-   */
-  window?: () => Window;
+  return (
+    <AppShell
+      header={{ height: 60 }}
+      navbar={{
+        width: 300,
+        breakpoint: 'sm',
+        collapsed: { mobile: !opened },
+      }}
+      padding="md"
+    >
+      <AppShell.Header>
+        <Burger
+          opened={opened}
+          onClick={toggle}
+          hiddenFrom="sm"
+          size="sm"
+        />
+        <div>Logo</div>
+      </AppShell.Header>
 
-  children?: React.ReactNode;
-}
+      <AppShell.Navbar p="md">Navbar</AppShell.Navbar>
 
-export default function ResponsiveDrawer(props: Props) {
-
-
-
-
-  return (props.children);
+      <AppShell.Main>
+        <Outlet />
+      </AppShell.Main>
+    </AppShell>
+  );
 }
