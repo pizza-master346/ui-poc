@@ -1,4 +1,4 @@
-import { TextInput } from '@mantine/core'
+import { SegmentedControl, TextInput } from '@mantine/core'
 import { DatePicker } from '@mantine/dates'
 
 export const Home = () => {
@@ -10,6 +10,15 @@ export const Home = () => {
                 placeholder='soso'
                 error="ll"
             />
+            <SegmentedControl
+
+
+                withItemsBorders={false}
+                radius='lg'
+                defaultValue='Profit'
+                size='md'
+                data={['Profit', 'Statistics', 'Schedulers']} />
+
 
             <DatePicker type="range" />
             <DatePicker type="default" />
